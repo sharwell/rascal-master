@@ -29,6 +29,19 @@
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/releases/juno</url>
 		</repository>
+		<!--
+			The IMP update site does not support p2 meta-data and therefore cannot
+			used for automated builds with maven/tycho.
+		 -->
+<!-- 		<repository> -->
+<!-- 			<id>imp</id> -->
+<!-- 			<url>http://download.eclipse.org/technology/imp/updates/</url> -->
+<!-- 		</repository> -->
+		<repository>
+			<id>imp-p2</id>
+			<layout>p2</layout>
+			<url>file:${imp-p2-path}</url>
+		</repository>		
 	</repositories>
 
 	<build>
