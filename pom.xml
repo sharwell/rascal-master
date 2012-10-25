@@ -6,11 +6,13 @@
 	<version>0.5.2-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<modules>
-  		<module>../org.eclipse.imp.pdb.master</module>
+		<module>../org.eclipse.imp.pdb.master</module>
 		<module>../AmbiDexter</module>
 		<module>../rascal</module>
 		<module>../rascal-eclipse</module>
 		<module>../rascal-shell</module>
+		<module>../rascal-feature</module>
+		<module>../rascal-update-site</module>    
 	</modules>
 
 	<properties>
@@ -45,6 +47,16 @@
 	</repositories>
 
 	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.eclipse.tycho</groupId>
+					<artifactId>tycho-p2-repository-plugin</artifactId>
+					<version>${tycho-version}</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		
 		<plugins>
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
@@ -126,6 +138,12 @@
 						</goals>
 					</execution>
 				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-p2-repository-plugin</artifactId>
+				<version>${tycho-version}</version>
 			</plugin>
 
 <!-- 			<plugin> -->
