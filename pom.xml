@@ -6,7 +6,10 @@
 	<version>0.5.2-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<modules>
-		<module>../org.eclipse.imp.pdb.master</module>
+  		<module>../org.eclipse.imp.pdb</module>
+		<module>../org.eclipse.imp.pdb.ui</module>
+		<module>../org.eclipse.imp.pdb.values</module>
+		<module>../org.eclipse.imp.runtime</module>	
 		<module>../AmbiDexter</module>
 		<module>../rascal</module>
 		<module>../rascal-eclipse</module>
