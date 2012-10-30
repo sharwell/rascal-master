@@ -33,20 +33,7 @@
 			<id>juno</id>
 			<layout>p2</layout>
 			<url>http://download.eclipse.org/releases/juno</url>
-		</repository>
-		<!--
-			The IMP update site does not support p2 meta-data and therefore cannot
-			used for automated builds with maven/tycho.
-		 -->
-<!-- 		<repository> -->
-<!-- 			<id>imp</id> -->
-<!-- 			<url>http://download.eclipse.org/technology/imp/updates/</url> -->
-<!-- 		</repository> -->
-		<repository>
-			<id>imp-p2</id>
-			<layout>p2</layout>
-			<url>file:${imp-p2-path}</url>
-		</repository>		
+		</repository>	
 	</repositories>
 
 	<build>
@@ -71,14 +58,17 @@
 					</execution>
 				</executions>
 			</plugin>
-	
+
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>target-platform-configuration</artifactId>
 				<version>${tycho-version}</version>
 
 				<configuration>
-					<environments>
+					<resolver>p2</resolver>
+					<pomDependencies>consider</pomDependencies>
+					
+<!-- 					<environments> -->
 <!-- 						<environment> -->
 <!-- 							<os>win32</os> -->
 <!-- 							<ws>win32</ws> -->
@@ -109,24 +99,18 @@
 <!-- 							<ws>cocoa</ws> -->
 <!-- 							<arch>x86_64</arch> -->
 <!-- 						</environment> -->
-					</environments>
+<!-- 					</environments> -->
 				</configuration>
 			</plugin>
-
-<!-- 			<plugin> -->
-<!-- 				<artifactId>maven-site-plugin</artifactId> -->
-<!-- 				<version>3.1</version> -->
-<!-- 				<executions> -->
-<!-- 					<execution> -->
-<!-- 						<id>attach-descriptor</id> -->
-<!-- 						<goals> -->
-<!-- 							<goal>attach-descriptor</goal> -->
-<!-- 						</goals> -->
-<!-- 					</execution> -->
-<!-- 				</executions> -->
-<!-- 			</plugin> -->
-			
 		</plugins>
 	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>lpg.runtime.java</groupId>
+			<artifactId>lpg.runtime.java</artifactId>
+			<version>2.0.18</version>
+		</dependency>
+	</dependencies>
 
 </project> 
