@@ -5,8 +5,14 @@
 
 [^why]: The IMP repository is not yet a p2 repository. Thus, e.g. the required bundle *lpg.runtime.java;bundle-version="2.0.18”* cannot resolved via the tycho p2 target platform resolver.
 
+
 # Go for it: Build your artefacts!
+Clean build, also invoking unit tests:
 > mvn clean install
+
+Clean build, without unit tests:
+> mvn clean install -DskipTests=true
+
 
 # Deploy to rascal-mpl update site
 1. > cd rascal-update-site
