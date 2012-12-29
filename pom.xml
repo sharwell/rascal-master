@@ -11,16 +11,6 @@
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<modules>
-		<module>../pdb</module>
-		<module>../pdb.ui</module>
-		<module>../pdb.values</module>
-		<module>../imp.runtime</module>
-		<module>../AmbiDexter</module>
-		<module>../rascal</module>
-		<module>../rascal-eclipse</module>
-		<module>../rascal-shell</module>
-		<module>../rascal-feature</module>
-		<module>../rascal-update-site</module>
 	</modules>
 
 	<properties>
